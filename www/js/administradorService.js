@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('starter.administradorService', [])
 
 .factory('Administradores', function() {
   // Might use a resource here that returns a JSON array

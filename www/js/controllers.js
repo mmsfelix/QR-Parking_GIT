@@ -27,8 +27,10 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller("ParametroCtrl", function($scope, Parametro){
+  $scope.parametro = Parametro.get(0);
+
+  $scope.salvarParametro = function(){
+    alert($scope.parametro.tolerancia);
+  }
 });
