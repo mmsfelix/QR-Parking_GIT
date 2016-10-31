@@ -4,25 +4,49 @@
     </ion-nav-buttons>
 
     <ion-content padding="true">
+      <form name="form" novalidate>
         <label class="item item-input">
             <span class="input-label">Nome</span>
-            <input type="text" ng-model="administrador.name">
+            <input type="text" name="name" ng-model="administrador.name" required>
+            <span class="obrigatorio" ng-show="form.name.$dirty && form.name.$invalid">
+              <span ng-show="form.name.$error.required">O campo nome é obrigatório.</span>
+            </span>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">CPF</span>
+            <input type="text" ng-model="administrador.cpf" ui-br-cpf-mask required>
         </label>
         <label class="item item-input">
             <span class="input-label">Email</span>
-            <input type="email">
+            <input type="email" name="email" ng-model="administrador.email" required>
+            <span class="obrigatorio" ng-show="form.email.$dirty && form.email.$invalid">
+              <span ng-show="form.email.$error.required">O campo email é obrigatório.</span>
+              <span ng-show="form.email.$error.email">Insira um email válido.</span>
+            </span>
         </label>
         <label class="item item-input">
             <span class="input-label">Confirmar email</span>
-            <input type="email">
+            <input type="email" name="confirmacaoEmail" ng-model="confirmacaoEmail" ng-pattern="administrador.email" required>
+            <span class="obrigatorio" ng-show="form.confirmacaoEmail.$dirty && form.confirmacaoEmail.$invalid">
+              <span ng-show="form.confirmacaoEmail.$error.required">O campo confirmação de email é obrigatório.</span>
+              <span ng-show="form.confirmacaoEmail.$error.pattern">Os emails são diferentes</span>
+            </span>
         </label>
         <label class="item item-input">
             <span class="input-label">Senha</span>
-            <input type="password">
+            <input type="password" name="senha" ng-model="senha" required>
+            <span class="obrigatorio" ng-show="form.senha.$dirty && form.senha.$invalid">
+              <span ng-show="form.senha.$error.required">O campo senha é obrigatório.</span>
+            </span>
         </label>
         <label class="item item-input">
             <span class="input-label">Confirmação da senha</span>
-            <input type="password">
+            <input type="password" name="confirmacaoSenha" ng-model="confirmacaoSenha" ng-pattern="senha" required>
+            <span class="obrigatorio" ng-show="form.confirmacaoSenha.$dirty && form.confirmacaoSenha.$invalid">
+              <span ng-show="form.confirmacaoSenha.$error.required">O campo confirmação da senha é obrigatório.</span>
+              <span ng-show="form.confirmacaoSenha.$error.pattern">As senhas são diferentes</span>
+            </span>
         </label>
+      </form>
     </ion-content>
 </ion-view>

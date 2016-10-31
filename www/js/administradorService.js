@@ -7,22 +7,37 @@ angular.module('starter.administradorService', [])
   var administradores = [{
     id: 0,
     name: 'Ben Sparrow',
+    cpf: '000.000.001-91',
+    email: 'email@email.com',
+    senha: '1234',
     situacao: 'Cadastro 09/10/2014',
   }, {
     id: 1,
     name: 'Max Lynx',
+    cpf: '000.000.001-91',
+    email: 'email@email.com',
+    senha: '1234',
     situacao: 'Cadastro 10/10/2014',
   }, {
     id: 2,
     name: 'Adam Bradleyson',
+    cpf: '000.000.001-91',
+    email: 'email@email.com',
+    senha: '1234',
     situacao: 'Cadastro 06/10/2014',
   }, {
     id: 3,
     name: 'Perry Governor',
+    cpf: '000.000.001-91',
+    email: 'email@email.com',
+    senha: '1234',
     situacao: 'Cadastro 09/10/2014',
   }, {
     id: 4,
     name: 'Mike Harrington',
+    cpf: '000.000.001-91',
+    email: 'email@email.com',
+    senha: '1234',
     situacao: 'Cadastro 09/10/2014',
   }];
 
