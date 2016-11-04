@@ -20,11 +20,11 @@ angular.module('starter.controllers', [])
 
 .controller('AdministradorDetailCtrl', function($scope, $stateParams, Administradores, $location) {
     $scope.administrador = Administradores.get($stateParams.administradorId);
+    $scope.administradorForm = angular.copy($scope.administrador);
 
     $scope.salvarAdministrador = function(){
-
-      //alert("salvo de mentira...");
-      //$location.path("tab/administradores");
+      Administradores.salvar($scope.administradorForm);
+      $location.path("tab/administradores");
   }
 })
 

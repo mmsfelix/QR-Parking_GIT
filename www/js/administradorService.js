@@ -6,7 +6,12 @@ angular.module('starter.administradorService', [])
 
   return {
     all: function() {
+      administradores = Restangular.all('getAll').getList().$object;
       return administradores;
+    },
+
+    salvar: function(administrador){
+      administradores.post(administrador);
     },
 
     remove: function(administrador) {
