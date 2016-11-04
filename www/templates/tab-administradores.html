@@ -12,8 +12,8 @@
 <ion-content padding="true">
     <ion-list>
         <ion-item class="item-remove-animate item-icon-right" ng-repeat="administrador in administradores | filter:busca | orderBy: orderList" type="item-text-wrap" href="#/tab/administradores/{{administrador.id}}">
-            <h2>{{administrador.name}}</h2>
-            <p>{{administrador.situacao}}</p>
+            <h2>{{administrador.nome}}</h2>
+            
             <i class="icon ion-chevron-right icon-accessory"></i>
 
             <ion-option-button class="button-stable" ng-click="remove(administrador)">

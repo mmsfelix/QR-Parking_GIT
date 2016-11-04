@@ -14,7 +14,11 @@
         </label>
         <label class="item item-input">
             <span class="input-label">CPF</span>
-            <input type="text" ng-model="administrador.cpf" ui-br-cpf-mask required>
+            <input type="text" name="cpf" ng-model="administrador.cpf" ng-cpf ui-br-cpf-mask required>
+            <span class="obrigatorio" ng-show="form.cpf.$dirty && form.cpf.$invalid">
+              <span ng-show="form.cpf.$error.required">O campo CPF é obrigatório.</span>
+              <span ng-show="!form.cpf.$error.required && !form.cpf.$valid">Insira um CPF válido.</span>
+            </span>
         </label>
         <label class="item item-input">
             <span class="input-label">Email</span>

@@ -5,8 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.administradorService', 'starter.parametroService', 'ui.utils.masks'])
-
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.administradorService', 'starter.parametroService', 'ui.utils.masks', 'ngCpfCnpj', 'restangular'])
+.constant('ApiEndpoint', {
+  url: 'http://localhost:8080/'
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,7 +25,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.administrado
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://localhost:8080/');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
